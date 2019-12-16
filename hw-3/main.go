@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	text := `Word1 word2 bla Word2 , pwel han.
-				bla ola ola Ola olba asgs sag han
+	text := `Word1 word2 bla Word2 , word2.
+				0la ola ola Ola olba asgs sag han
 			Word1
 			word1
 			`
