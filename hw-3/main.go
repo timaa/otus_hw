@@ -6,10 +6,10 @@ import (
 )
 
 func main() {
-	text := `word1 word2 bla word2 , pwel han.
+	text := `Word1 word2 bla Word2 , pwel han.
 				bla ola ola Ola olba asgs sag han
-			sagasg
-			asgsag
+			Word1
+			word1
 			`
 	fmt.Print(frequency.TopN(text, 10))
 }
