@@ -53,6 +53,6 @@ func TestList_Remove(t *testing.T) {
 	listSize = list.Len()
 
 	if listSize != 3 {
-		t.Errorf("Got %d, expected %d ", list.Len(), 4)
+		t.Errorf("Got %d, expected %d ", list.Len(), 3)
 	}
 }
