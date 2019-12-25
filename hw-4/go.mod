@@ -1,3 +1,3 @@
-module github.com/timaa/otus-go/hw-4
+module github.com/timaa/otus_hw/hw-4
 
 go 1.13

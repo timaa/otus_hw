@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/timaa/otus-go/hw-4/linkedlist"
+	"github.com/timaa/otus_hw/hw-4/linkedlist"
 )
 
 func main() {

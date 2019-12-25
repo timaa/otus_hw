@@ -62,10 +62,10 @@ func (l *List) Remove(i Item) {
 }
 
 func (l List) String() string {
-	curElem:=l.first
-	str:=strings.Builder{}
+	curElem := l.first
+	str := strings.Builder{}
 
-	for ;curElem != nil; {
+	for curElem != nil {
 		str.WriteString(fmt.Sprintf("%v \n", curElem.Value()))
 		curElem = curElem.Next()
 	}
