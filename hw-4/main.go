@@ -12,9 +12,9 @@ func main() {
 	list.PushBack(3)
 	list.PushFront(4)
 	elem:=list.Last()
-	fmt.Println(list)
+	fmt.Println(list.ToString())
 
 	list.Remove(*elem.Prev())
-	fmt.Println(list)
+	fmt.Println(list.ToString())
 
 }
