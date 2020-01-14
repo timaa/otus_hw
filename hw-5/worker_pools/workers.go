@@ -9,6 +9,7 @@ import (
 type threadSafeCounter struct {
 	mu      sync.Mutex
 	counter int
+
 	maxErrorCount int
 }
 
@@ -40,7 +41,6 @@ func Run(tasks []func() error, N int, M int) error {
 }
 
 func worker(id int, funcs chan func() error, counter *threadSafeCounter) {
-
 
 	fmt.Printf("counter=%d \n", counter.Value())
 	for f := range funcs {

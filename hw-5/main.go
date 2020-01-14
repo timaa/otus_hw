@@ -21,17 +21,14 @@ func f1() error{
 func f2() error{
 	fmt.Println("f2")
 	return errors.New("f2 err")
-
 }
 
 func f3() error{
 	fmt.Println("f3")
 	return errors.New("f3 err")
-
 }
 
 func f4() error{
 	fmt.Println("f4")
 	return errors.New("f4 err")
-
 }
