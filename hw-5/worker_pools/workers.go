@@ -3,7 +3,6 @@ package worker_pools
 import (
 	"fmt"
 	"sync"
-	"time"
 )
 
 type threadSafeCounter struct {
@@ -34,8 +33,6 @@ func Run(tasks []func() error, N int, M int) error {
 	for j := 0; j < M; j++ {
 		funcs <- tasks[j]
 	}
-
-	time.Sleep(1 * time.Second)
 
 	return nil
 }

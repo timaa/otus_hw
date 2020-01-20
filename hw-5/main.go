@@ -15,12 +15,14 @@ func main() {
 
 func f1() error{
 	fmt.Println("f1")
-	return errors.New("f1 err")
+	return nil
+	//return errors.New("f1 err")
 }
 
 func f2() error{
 	fmt.Println("f2")
-	return errors.New("f2 err")
+	return nil
+	//return errors.New("f2 err")
 }
 
 func f3() error{
