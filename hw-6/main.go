@@ -1,47 +1,28 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"io"
-	"os"
+	"github.com/timaa/otus_hw/hw-6/copy"
+	"log"
 )
 
+
+var From, To string
+var Offset, Limit int
+
+func init() {
+	flag.StringVar(&From, "From", "", "file dest")
+	flag.StringVar(&To, "To", "", "file src")
+	flag.IntVar(&Offset, "Offset", 0, "offset dest file")
+	flag.IntVar(&Limit, "Limit", 0, "Limit dest file")
+}
 func main() {
-	filePath := "/Users/timur/go/src/github.com/timaa/otus_hw/hw-6/test.txt"
-	filePath2 := "/Users/timur/go/src/github.com/timaa/otus_hw/hw-6/test2.txt"
-	N := 100
-	var file *os.File
-	buff := make([]byte, N)
+	flag.Parse()
+	fmt.Printf("From-%s, To-%s Offset-%d, Limit-%d ", From, To, Offset, Limit)
 
-	file, err:= os.Open(filePath)
-	file2, _ := os.Create(filePath2)
-
-	if err !=nil {
-		fmt.Println("%v", err)
+	err := copy.Copy(From, To, Limit, Offset)
+	if err != nil {
+		log.Panic(err)
 	}
-	err = nil
-
-	for ;; {
-
-		read, err := io.ReadFull(file, buff)
-		fmt.Println("%v", read)
-		fmt.Println("%s", string(buff[:read]))
-		written, err := file2.Write(buff[:read])
-		fmt.Println("written %v", written)
-
-		if err != nil {
-			fmt.Println(" %v", err)
-		}
-
-		if err == io.EOF || read ==0 {
-
-			fmt.Println("END")
-			return
-		}
-	}
-
-
-
-	defer file.Close()
-
 }
