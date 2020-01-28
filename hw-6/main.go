@@ -15,6 +15,7 @@ func init() {
 	flag.Int64Var(&Offset, "Offset", 0, "offset dest file")
 	flag.Int64Var(&Limit, "Limit", -1, "Limit dest file")
 }
+
 func main() {
 	flag.Parse()
 	err := copy.Copy(From, To, Limit, Offset)

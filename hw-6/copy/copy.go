@@ -6,10 +6,11 @@ import (
 	"io"
 	"os"
 )
+
 // Copy ...
 func Copy(from string, to string, limit int64, offset int64) error {
 
-	N := 1024*1024
+	N := 1024 * 1024
 	var file *os.File
 	buff := make([]byte, N)
 
@@ -23,13 +24,13 @@ func Copy(from string, to string, limit int64, offset int64) error {
 	if err != nil {
 		return err
 	}
-	fileInfo,err := file.Stat()
+	fileInfo, err := file.Stat()
 	if err != nil {
 		return err
 	}
 
 	if limit == -1 {
-		limit=fileInfo.Size()
+		limit = fileInfo.Size()
 	}
 
 	if offset > limit {
